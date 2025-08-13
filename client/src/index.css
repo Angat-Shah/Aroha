@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Aroha Wellness Design System - Apple-inspired calming palette
+All colors MUST be HSL for proper theming
+*/
+
+@layer base {
+  :root {
+    /* Base colors - warm, calming background */
+    --background: 48 20% 98%;
+    --foreground: 210 10% 15%;
+
+    /* Card system - subtle elevation */
+    --card: 0 0% 100%;
+    --card-foreground: 210 10% 15%;
+
+    /* Popover system */
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 10% 15%;
+
+    /* Primary - Sage green for wellness */
+    --primary: 130 30% 45%;
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 130 25% 88%;
+    --primary-glow: 130 35% 75%;
+
+    /* Secondary - Warm cream */
+    --secondary: 35 25% 92%;
+    --secondary-foreground: 210 10% 25%;
+
+    /* Muted - Soft neutrals */
+    --muted: 45 15% 95%;
+    --muted-foreground: 210 8% 55%;
+
+    /* Accent - Gentle blue */
+    --accent: 200 25% 88%;
+    --accent-foreground: 200 40% 25%;
+
+    /* Destructive - Soft coral */
+    --destructive: 350 60% 65%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Borders and inputs */
+    --border: 45 15% 88%;
+    --input: 45 15% 92%;
+    --ring: 130 30% 45%;
+
+    /* Wellness gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(130 30% 45%), hsl(130 35% 75%));
+    --gradient-calm: linear-gradient(180deg, hsl(48 20% 98%), hsl(35 25% 95%));
+    --gradient-subtle: linear-gradient(135deg, hsl(200 25% 95%), hsl(130 25% 95%));
+
+    /* Wellness shadows */
+    --shadow-soft: 0 2px 20px -5px hsl(130 30% 45% / 0.1);
+    --shadow-wellness: 0 8px 40px -10px hsl(130 30% 45% / 0.15);
+    --shadow-glow: 0 0 30px hsl(130 35% 75% / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    --transition-spring: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    --radius: 12px;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  /* Apple-inspired typography scale */
+  h1 { @apply text-3xl md:text-4xl font-semibold tracking-tight leading-tight; }
+  h2 { @apply text-2xl md:text-3xl font-semibold tracking-tight leading-snug; }
+  h3 { @apply text-xl md:text-2xl font-medium tracking-tight leading-snug; }
+  h4 { @apply text-lg md:text-xl font-medium tracking-tight; }
+  
+  /* Wellness-specific components */
+  .wellness-card {
+    @apply bg-card rounded-2xl p-6 shadow-[var(--shadow-soft)] border border-border/50;
+    transition: var(--transition-smooth);
+  }
+  
+  .wellness-card:hover {
+    @apply shadow-[var(--shadow-wellness)] transform -translate-y-1;
+  }
+  
+  .wellness-gradient {
+    background: var(--gradient-primary);
+  }
+  
+  .calm-gradient {
+    background: var(--gradient-calm);
+  }
+  
+  .subtle-gradient {
+    background: var(--gradient-subtle);
+  }
+  
+  /* Wellness button variants */
+  .btn-wellness {
+    @apply bg-primary text-primary-foreground rounded-xl px-6 py-3 font-medium;
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .btn-wellness:hover {
+    @apply transform -translate-y-0.5;
+    box-shadow: var(--shadow-wellness);
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground border border-border/50 rounded-xl px-6 py-3 font-medium;
+    transition: var(--transition-smooth);
+  }
+  
+  .btn-secondary:hover {
+    @apply bg-accent transform -translate-y-0.5;
+  }
+}
