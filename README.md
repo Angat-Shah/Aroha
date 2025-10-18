@@ -92,15 +92,17 @@ Below is the simplified user journey:
 
 ## Getting Started (Developer Setup)
 
-**1. Clone the repository & Navigate to Project Directory**
 ```bash
+# Clone the repository
 git clone https://github.com/Angat-Shah/Aroha.git
-cd Aroha.git
-```
 
-**2. Install the dependencies & Run the WebApp**
-```bash
+# Navigate to project directory
+cd Aroha
+
+# Install dependencies
 npm install
+
+# Run the app
 npm run dev
 ```
 
