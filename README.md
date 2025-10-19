@@ -44,8 +44,11 @@ To create a digital platform that helps users understand their mind–body const
 - View and manage user data
 - Analyze trends across users and feedback
 
-## User Flow
+## User Flow Diagram
 Below is the simplified user journey:
+<img width="800" height="960" alt="Aroha_UserFlow" src="https://github.com/user-attachments/assets/0804db01-463f-422c-958c-e8fc4594bdc3" />
+
+
 
 ## Tech Stack
 | Layer          | Technology Used                         |
