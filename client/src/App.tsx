@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AppLayout } from "./components/layout/AppLayout";
 import Welcome from "./pages/Welcome";
+import Home from "./pages/Home";
 import Onboarding from "./pages/Onboarding";
 import Analysis from "./pages/Analysis";
 import Results from "./pages/Results";
@@ -25,8 +26,14 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
+          {/* Public routes without navigation */}
+          <Route path="/" element={<Welcome />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+          
+          {/* Protected routes with navigation */}
           <Route path="/" element={<AppLayout />}>
-            <Route index element={<Welcome />} />
+            <Route path="home" element={<Home />} />
             <Route path="onboarding" element={<Onboarding />} />
             <Route path="analysis" element={<Analysis />} />
             <Route path="results" element={<Results />} />
@@ -35,8 +42,7 @@ const App = () => (
             <Route path="progress" element={<Progress />} />
             <Route path="profile" element={<Profile />} />
           </Route>
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/signup" element={<SignUp />} />
+          
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

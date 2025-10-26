@@ -49,7 +49,7 @@ const Welcome: React.FC = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button 
-                onClick={() => navigate('/onboarding')}
+                onClick={() => navigate('/signup')}
                 className="btn-wellness flex items-center space-x-2 px-8 py-4 text-lg"
               >
                 <span>Begin Your Journey</span>
@@ -57,7 +57,7 @@ const Welcome: React.FC = () => {
               </Button>
               <Button 
                 variant="outline"
-                onClick={() => navigate('/login')}
+                onClick={() => navigate('/signin')}
                 className="btn-secondary px-8 py-4 text-lg"
               >
                 Sign In
@@ -122,7 +122,7 @@ const Welcome: React.FC = () => {
             through personalized Ayurvedic guidance.
           </p>
           <Button 
-            onClick={() => navigate('/onboarding')}
+            onClick={() => navigate('/signup')}
             className="btn-wellness text-lg px-8 py-4"
           >
             Start Your Assessment

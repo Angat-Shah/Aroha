@@ -1,0 +1,25 @@
+{
+  "name": "aroha-ai",
+  "version": "1.0.0",
+  "description": "AI models and inference for Aroha wellness recommendations",
+  "main": "src/index.js",
+  "scripts": {
+    "train": "node src/training/train.js",
+    "infer": "node src/inference/infer.js",
+    "evaluate": "node src/training/evaluate.js"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.11.0",
+    "@tensorflow/tfjs-node": "^4.11.0",
+    "natural": "^6.9.1",
+    "ml-regression": "^10.0.0",
+    "compromise": "^14.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "author": "Aroha Team",
+  "license": "MIT"
+}
+
+

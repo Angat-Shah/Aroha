@@ -27,6 +27,8 @@ const SignUp = () => {
       setIsLoading(false);
       // This is just UI - no actual authentication
       console.log('Sign up UI demo:', formData);
+      // Navigate to onboarding after successful signup
+      window.location.href = '/onboarding';
     }, 2000);
   };
 

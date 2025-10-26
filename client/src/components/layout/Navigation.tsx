@@ -1,11 +1,10 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { Home, User, Calendar, TrendingUp, Brain, Utensils } from 'lucide-react';
+import { Home, User, Calendar, TrendingUp, Utensils } from 'lucide-react';
 import arohaLogo from '@/assets/aroha-logo.png';
 
 const navItems = [
-  { to: '/', icon: Home, label: 'Home' },
-  { to: '/analysis', icon: Brain, label: 'Analysis' },
+  { to: '/home', icon: Home, label: 'Home' },
   { to: '/diet', icon: Utensils, label: 'Diet' },
   { to: '/schedule', icon: Calendar, label: 'Schedule' },
   { to: '/progress', icon: TrendingUp, label: 'Progress' },
