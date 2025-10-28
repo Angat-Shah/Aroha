@@ -101,6 +101,7 @@ git clone https://github.com/Angat-Shah/Aroha.git
 
 # Navigate to project directory
 cd Aroha
+cd client
 
 # Install dependencies
 npm install
